@@ -1,0 +1,38 @@
+#include<stdio.h>
+struct polynomial
+{
+    int cf;
+    int ex;
+};
+typedef struct polynomial P;
+void accept(P a[10],int n)
+{
+    int i,j;
+    printf("enter the coefficent and exponent\n");
+    for(i=0;i<n;i++)
+    
+    scanf("%d%d",&a[i].cf,&a[i].ex);
+}
+void display(P a[10],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(a[i].cf>0)
+        {
+            printf("+%d+X^%d",a[i].cf,a[i].ex);
+        }
+        else
+        {
+            printf("%d+X^%d",a[i].cf,a[i].ex);
+        }
+    }
+}
+int main()
+{
+    P a[10];
+    int n;
+    printf("enter the value of n\n");
+    scanf("%d",&n);
+    accept(a,n);
+    display(a,n);
+}
