@@ -1,0 +1,20 @@
+#include <stdio.h>
+void accept(int *a,int *b,int *c,int *d)
+{
+    printf("enter the of a and b for(a+ib)");
+    scanf("%d%d",a,b);
+    printf("enter the values of c and for(c+id)");
+    scanf("%d%d",c,d);
+}
+void add(int a,int b,int c,int d)
+{
+    int real=a+c;
+    int img=b+d;
+    printf("res =%d + i%d",real,img);
+}
+int main()
+{
+    int a,b,c,d;
+    accept(&a,&b,&c,&d);
+    add(a,b,c,d);
+}
