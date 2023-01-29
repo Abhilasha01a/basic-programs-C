@@ -1,0 +1,31 @@
+#include <stdio.h>
+int cal(int a,int b,char ch)
+{
+    switch(ch)
+    {
+        case '+':return (a+b);
+        break;
+        case '-':return (a-b);
+          break;
+        case '*':return (a*b);
+          break;
+        case '/':return (a/b);
+          break;
+        case '%':return (a%b);
+          break;
+        default:printf("invalid");
+          break;
+        
+    }
+}
+int main()
+{
+    int a,b,res;
+    char ch;
+    printf("enter the operation");
+    scanf("%c",&ch);
+    printf("enter the operands\n");
+    scanf("%d%d",&a,&b);
+    res=cal(a,b,ch);
+    printf("res=%d",res);
+}
