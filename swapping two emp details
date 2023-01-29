@@ -1,0 +1,58 @@
+struct EMP
+{
+    char name[20];
+    int id;
+    float sal;
+};
+typedef struct EMP E;
+#include <stdio.h>
+#include <string.h>
+void accept(E e[10])
+{
+    printf("enter the details of \n");
+    for(int i=0;i<2;i++)
+    { 
+        printf(" %d emp\n",i+1);
+        printf("name=");
+        scanf("%s",e[i].name);
+        printf("id=");
+        scanf("%d",&e[i].id);
+        printf("sal=");
+        scanf("%f",&e[i].sal);
+    }
+}
+void display(E e[10])
+{
+    printf("details are\n");
+    for(int i=0;i<2;i++)
+    { 
+        printf("%d emp",i+1);
+        printf("name=%s\n id=%d\n sal=%f\n",e[i].name,e[i].id,e[i].sal);
+    }
+}
+void swap(E e[10])
+{
+    E temp;
+    temp.id=e[0].id;
+    e[0].id=e[1].id;
+    e[1].id=temp.id;
+    
+    temp.sal=e[0].sal;
+    e[0].sal=e[1].sal;
+    e[1].sal=temp.sal;
+    
+    strcpy(temp.name,e[0].name);
+    strcpy(e[0].name,e[1].name);
+    strcpy(e[1].name,temp.name);
+}
+int main()
+{
+    E e[10];
+    
+    accept(e);
+    printf("before swap \n");
+    display(e);
+    swap(e);
+    printf("after swap\n" );
+    display(e);
+}
