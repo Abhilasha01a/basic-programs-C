@@ -1,0 +1,33 @@
+struct EMP
+{
+    char ename[20];
+    int eid;
+    float esal;
+};
+typedef struct EMP E;
+#include <stdio.h>
+void accept(E e[10],int n)
+{
+    printf("enter the details \n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%s%d%f",e[i].ename,&e[i].eid,&e[i].esal);
+    }
+}
+void display(E e[10],int n)
+{
+    printf("details are\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%s\n%d\n%f\n",e[i].ename,e[i].eid,e[i].esal);
+    }
+}
+int main()
+{
+    E e[10];
+    int n;
+    printf("numer of employees are\n");
+    scanf("%d",&n);
+    accept(e,n);
+    display(e,n);
+}
