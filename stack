@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define max_size 4
+void push(int S[max_size],int *top,int elem)
+{
+    if(*top==max_size-1)
+    {
+        printf("over flow condition\n");
+    }
+    else
+    {
+        
+        (*top)++;
+        S[*top]=elem;
+        
+    }
+}
+void pop(int S[max_size],int *top)
+{
+    if(*top==-1)
+    {
+        printf("under flow condition\n");
+    }
+    else
+    {
+        int elem=S[*top];
+        (*top)--;
+        printf("deleted elem is %d",elem);
+    }
+}
+void display(int S[max_size],int top)
+{
+    int i;
+    for(i=0;i<=top;i++)
+    {
+        printf("%d\n",S[i]);
+    }
+}
+int main()
+{
+    int S[max_size],top=-1,elem ,ch;
+    while(1)
+    {
+        printf("enter the choice 1 for push 2 for pop 3 for display 4 for exit \n");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+              printf("enter the elem to be added \n");
+              scanf("%d",&elem);
+              push (S,&top,elem);
+              break;
+            case 2:
+            pop(S,&top);
+            break;
+            case 3:
+            display(S,top);
+            break;
+            case 4:
+            exit(0);
+            default :
+            printf("invalid\n");
+            break;
+        }
+    }
+}
