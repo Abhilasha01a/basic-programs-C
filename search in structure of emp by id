@@ -1,0 +1,62 @@
+struct EMP
+{
+    char name[20];
+    int id;
+    float sal;
+};
+typedef struct EMP E;
+#include <stdio.h>
+#include <string.h>
+void accept(E e[10],int n)
+{
+    printf("enter the details of \n");
+    for(int i=0;i<n;i++)
+    { 
+        printf(" %d emp\n",i+1);
+        printf("name=");
+        scanf("%s",e[i].name);
+        printf("id=");
+        scanf("%d",&e[i].id);
+        printf("sal=");
+        scanf("%f",&e[i].sal);
+    }
+}
+void display(E e[10],int n)
+{
+    printf("details are\n");
+    for(int i=0;i<n;i++)
+    { 
+        printf("%d emp",i+1);
+        printf("name=%s\n id=%d\n sal=%f\n",e[i].name,e[i].id,e[i].sal);
+    }
+}
+void search(E e[10],int n)
+{
+    int key;
+    printf("enter the key name\n");
+    scanf("%d",&key);
+    for(int i=0;i<n;i++)
+    {
+        if(e[i].id == key)
+        {
+            printf("key is found at %d",i+1);
+            printf("\nname=%s",e[i].name);
+            printf("\nid=%d",e[i].id);
+            printf("\nsal=%f",e[i].sal);
+            return;
+        }
+    }
+    printf("not found\n");
+}
+
+int main()
+{
+    E e[10];
+    int n;
+    printf("enter the no of employees\n");
+    scanf("%d",&n);
+    accept(e,n);
+    
+    display(e,n);
+    search(e,n);
+}
