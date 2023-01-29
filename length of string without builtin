@@ -1,0 +1,17 @@
+#include <stdio.h>
+int str_length(char a[10])
+{
+    int len=0;
+    for(int i=0;a[i]!='\0';i++)
+    {
+        len++;
+    }
+    return len;
+}
+int main()
+{
+    char a[10];
+    printf("enter the string\n");
+    scanf("%s",a);
+    printf("length of string %s is %d",a,str_length(a));
+}
