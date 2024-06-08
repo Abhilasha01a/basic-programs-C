@@ -1,0 +1,63 @@
+#include <stdio.h>
+ struct Employee
+{
+    char empname[10];
+    int empid;
+};
+typedef struct Employee E;
+struct Student
+{
+    char studname[10];
+    int id;
+};
+typedef struct Student St;
+struct school
+{
+    char name[20];
+    struct Employee Emp[10];
+    struct Student Stud[10];
+};
+typedef struct school S;
+int main() {
+    // Write C code here
+    S S1;
+    int m,n;
+    printf("enter School  deatils\n");
+    {
+        printf("enter the school name: ");
+        scanf("%s",S1.name);
+        printf("\n enter number of employee");
+        scanf("%d",&n);
+        for(int i=0;i<n;i++)
+        {
+        printf("enter %d employee details :\n name:",i+1);
+        scanf("%s",S1.Emp[i].empname);
+        printf("id:");
+        scanf("%d",&S1.Emp[i].empid);
+        }
+        for(int i=0;i<n;i++)
+        {
+        printf(" %d st employee=",i+1);
+        printf("%s \n %d \n",S1.Emp[i].empname,S1.Emp[i].empid);
+        }
+        
+        
+        printf("\n enter number of Students");
+        scanf("%d",&m);
+        for(int i=0;i<m;i++)
+        {
+        printf("enter %d employee details :\n name:",i+1);
+        scanf("%s",S1.Stud[i].studname);
+        printf("id:");
+        scanf("%d",&S1.Stud[i].id);
+        }
+        for(int i=0;i<m;i++)
+        {
+        printf(" %d st Student=",i+1);
+        printf("%s \n %d",S1.Stud[i].studname,S1.Stud[i].id);
+        }
+    }
+    
+    
+    return 0;
+}
