@@ -3,7 +3,7 @@
 
 int count = 0;
 void insert(int *q, int *rear)
-{
+{ 
        (*rear)++;
        printf("Enter element : ");
        if (!count)
